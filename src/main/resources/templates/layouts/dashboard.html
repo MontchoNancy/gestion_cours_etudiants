@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"  xnlns:layout="http://www.thymleaf.org" xmlns:xnlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Azzara Bootstrap 4 Admin Dashboard</title>
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <link rel="icon" th:href="@{/images/icon.ico}" type="image/x-icon"/>
+    <link rel="stylesheet" th:href="@{/assets/flaticon.html}">
+    <link rel="stylesheet" th:href="@{/css/fonts.css}">
+    
+    <!-- Fonts and icons -->
+    <script th:src="@{/js/webfont.min.js}"></script>
+    <script>
+        WebFont.load({
+            google: {"families":["Open+Sans:300,400,600,700"]},
+            custom: {"families":["flaticon", "Font Awesome 5 Solid", "Font Awesome 5 Regular", "Font Awesome 5 Brands"], urls: ['/css/fonts.css']},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/azzara.min.css}">
+    
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" th:href="@{/css/demo.css}">
+</head>
+<body>
+
+<div class="wrapper">
+    
+    <!--
+        Tip 1: You can change the background color of the main header using: data-background-color="blue | purple | light-blue | green | orange | red"
+    -->
+    <div class="main-header" data-background-color="purple">
+        <!-- Logo Header -->
+        <div class="logo-header">
+            
+            <a href="index.html" class="logo">
+                <img th:src="@{/images/logoazzara.svg}" alt="navbar brand" class="navbar-brand">
+            </a>
+            <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="fa fa-bars"></i>
+					</span>
+            </button>
+            <button class="topbar-toggler more"><i class="fa fa-ellipsis-v"></i></button>
+            <div class="navbar-minimize">
+                <button class="btn btn-minimize btn-rounded">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- End Logo Header -->
+        
+        <!-- Navbar Header -->
+        <span th:replace="fragments/header::header"></span>
+        <!-- End Navbar -->
+    </div>
+    
+    
+    <span th:replace="fragments/sidebar::sidebar"></span>
+    
+    
+    
+    
+    <div class="main-panel">
+        <div class="content"layout:fragment="content">
+    </div>
+    </div>
+    
+    <!-- Custom template | don't include it in your project! -->
+    <div class="custom-template">
+        <div class="title">Settings</div>
+        <div class="custom-content">
+            <div class="switcher">
+                <div class="switch-block">
+                    <h4>Topbar</h4>
+                    <div class="btnSwitch">
+                        <button type="button" class="changeMainHeaderColor" data-color="blue"></button>
+                        <button type="button" class="selected changeMainHeaderColor" data-color="purple"></button>
+                        <button type="button" class="changeMainHeaderColor" data-color="light-blue"></button>
+                        <button type="button" class="changeMainHeaderColor" data-color="green"></button>
+                        <button type="button" class="changeMainHeaderColor" data-color="orange"></button>
+                        <button type="button" class="changeMainHeaderColor" data-color="red"></button>
+                    </div>
+                </div>
+                <div class="switch-block">
+                    <h4>Background</h4>
+                    <div class="btnSwitch">
+                        <button type="button" class="changeBackgroundColor" data-color="bg2"></button>
+                        <button type="button" class="changeBackgroundColor selected" data-color="bg1"></button>
+                        <button type="button" class="changeBackgroundColor" data-color="bg3"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="custom-toggle">
+            <i class="flaticon-settings"></i>
+        </div>
+    </div>
+    <!-- End Custom template -->
+</div>
+</div>
+<!--   Core JS Files   -->
+<script th:src="@{/js/jquery.3.2.1.min.js}"></script>
+<script th:src="@{/js/popper.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+
+<!-- jQuery UI -->
+<script th:src="@{/js/jquery-ui.min.js}"></script>
+<script th:src="@{/js/jquery.ui.touch-punch.min.js}"></script>
+
+<!-- jQuery Scrollbar -->
+<script th:src="@{/js/jquery.scrollbar.min.js}"></script>
+
+<!-- Moment JS -->
+<script th:src="@{/js/moment.min.js}"></script>
+
+<!-- Chart JS -->
+<script th:src="@{/js/chart.min.js}"></script>
+
+<!-- jQuery Sparkline -->
+<script th:src="@{/js/jquery.sparkline.min.js}"></script>
+
+<!-- Chart Circle -->
+<script th:src="@{/js/circles.min.js}"></script>
+
+<!-- Datatables -->
+<script th:src="@{/js/datatables.min.js}"></script>
+
+<!-- Bootstrap Notify -->
+<script th:src="@{/js/bootstrap-notify.min.js}"></script>
+
+<!-- Bootstrap Toggle -->
+<script th:src="@{/js/bootstrap-toggle.min.js}"></script>
+
+<!-- jQuery Vector Maps -->
+<script th:src="@{/js/jquery.vmap.min.js}"></script>
+<script th:src="@{/js/jquery.vmap.world.js}"></script>
+
+<!-- Google Maps Plugin -->
+<script th:src="@{/js/gmaps.js}"></script>
+
+<!-- Sweet Alert -->
+<script th:src="@{/js/sweetalert.min.js}"></script>
+
+<!-- Azzara JS -->
+<script th:src="@{/js/ready.min.js}"></script>
+
+<!-- Azzara DEMO methods, don't include it in your project! -->
+<script th:src="@{/js/setting-demo.js}"></script>
+<script th:src="@{/js/demo.js}"></script>
+</body>
+</html>
